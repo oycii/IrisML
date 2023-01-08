@@ -1,0 +1,776 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "// Модель классификации для Ирисов Фишера (https://ru.wikipedia.org/wiki/Ирисы_Фишера)",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:50+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244137_671513520",
+      "id": "paragraph_1672668145342_766752497",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:323",
+      "dateFinished": "2023-01-05T06:46:50+0000",
+      "dateStarted": "2023-01-05T06:46:50+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "// Загрузить данные для классификации (https://www.kaggle.com/datasets/arshid/iris-flower-dataset или https://github.com/apache/spark/blob/v3.2.3/data/mllib/iris_libsvm.txt)",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:50+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244138_1188798843",
+      "id": "paragraph_1672668480692_388819258",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:324",
+      "dateFinished": "2023-01-05T06:46:51+0000",
+      "dateStarted": "2023-01-05T06:46:50+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "import org.apache.spark.mllib.util.MLUtils\nval basePath = \"/opt/spark/data/moe\"\nval data = MLUtils.loadLibSVMFile(sc, basePath + \"/data/iris_libsvm.txt\")\ndata.take(5).foreach(println)\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(0.0,(4,[0,1,2,3],[5.1,3.5,1.4,0.2]))\n(0.0,(4,[0,1,2,3],[4.9,3.0,1.4,0.2]))\n(0.0,(4,[0,1,2,3],[4.7,3.2,1.3,0.2]))\n(0.0,(4,[0,1,2,3],[4.6,3.1,1.5,0.2]))\n(0.0,(4,[0,1,2,3],[5.0,3.6,1.4,0.2]))\nimport org.apache.spark.mllib.util.MLUtils\n\u001b[1m\u001b[34mbasePath\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = /opt/spark/data/moe\n\u001b[1m\u001b[34mdata\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint]\u001b[0m = MapPartitionsRDD[68] at map at MLUtils.scala:86\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=26",
+              "$$hashKey": "object:3393"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=27",
+              "$$hashKey": "object:3394"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244138_276544017",
+      "id": "paragraph_1672668508564_836516475",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:325",
+      "dateFinished": "2023-01-05T06:46:51+0000",
+      "dateStarted": "2023-01-05T06:46:51+0000"
+    },
+    {
+      "text": "// Название Ирисов по их идентификаторам",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244138_2089504385",
+      "id": "paragraph_1672688590352_458472201",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:326",
+      "dateFinished": "2023-01-05T06:46:51+0000",
+      "dateStarted": "2023-01-05T06:46:51+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "val irisNames = Map(0 -> \"setosa\", 1 -> \"versicolor\", 2 -> \"virginica\")",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mirisNames\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.Map[Int,String]\u001b[0m = Map(0 -> setosa, 1 -> versicolor, 2 -> virginica)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244138_1658285778",
+      "id": "paragraph_1672761084548_1377905978",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:327",
+      "dateFinished": "2023-01-05T06:46:52+0000",
+      "dateStarted": "2023-01-05T06:46:51+0000"
+    },
+    {
+      "text": "// Разбиваем данные на данные для обучения и проверки",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:52+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244138_1915765932",
+      "id": "paragraph_1672761232070_1298578804",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:328",
+      "dateFinished": "2023-01-05T06:46:52+0000",
+      "dateStarted": "2023-01-05T06:46:52+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "val splits = data.randomSplit(Array(0.3, 0.7))\nval trainingData = splits(1)\nval checkData = splits(0)\nprintln(\"count training data: \" + trainingData.count)\nprintln(\"count check data: \" + checkData.count)",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:52+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "count training data: 91\ncount check data: 59\n\u001b[1m\u001b[34msplits\u001b[0m: \u001b[1m\u001b[32mArray[org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint]]\u001b[0m = Array(MapPartitionsRDD[69] at randomSplit at <console>:45, MapPartitionsRDD[70] at randomSplit at <console>:45)\n\u001b[1m\u001b[34mtrainingData\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint]\u001b[0m = MapPartitionsRDD[70] at randomSplit at <console>:45\n\u001b[1m\u001b[34mcheckData\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint]\u001b[0m = MapPartitionsRDD[69] at randomSplit at <console>:45\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=28",
+              "$$hashKey": "object:3482"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=29",
+              "$$hashKey": "object:3483"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244138_1124182600",
+      "id": "paragraph_1672763197966_720989974",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:329",
+      "dateFinished": "2023-01-05T06:46:52+0000",
+      "dateStarted": "2023-01-05T06:46:52+0000"
+    },
+    {
+      "text": "// Обучаем модель",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:52+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244139_1850353289",
+      "id": "paragraph_1672763307814_1808113467",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:330",
+      "dateFinished": "2023-01-05T06:46:52+0000",
+      "dateStarted": "2023-01-05T06:46:52+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "import org.apache.spark.mllib.tree.RandomForest\n\nval numClasses = 3\nval categoricalFeaturesInfo = Map[Int, Int]()\nval numTrees = 3000\nval featureSubsetStrategy = \"auto\"\nval impurity = \"gini\"\nval maxDepth = 25\nval maxBins = 32\n\nval model = RandomForest.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo, numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:52+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.mllib.tree.RandomForest\n\u001b[1m\u001b[34mnumClasses\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 3\n\u001b[1m\u001b[34mcategoricalFeaturesInfo\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.Map[Int,Int]\u001b[0m = Map()\n\u001b[1m\u001b[34mnumTrees\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 3000\n\u001b[1m\u001b[34mfeatureSubsetStrategy\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = auto\n\u001b[1m\u001b[34mimpurity\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = gini\n\u001b[1m\u001b[34mmaxDepth\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 25\n\u001b[1m\u001b[34mmaxBins\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 32\n\u001b[1m\u001b[34mmodel\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.mllib.tree.model.RandomForestModel\u001b[0m =\nTreeEnsembleModel classifier with 3000 trees\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=30",
+              "$$hashKey": "object:3987"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=31",
+              "$$hashKey": "object:3988"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=32",
+              "$$hashKey": "object:3989"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=33",
+              "$$hashKey": "object:3990"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=34",
+              "$$hashKey": "object:3991"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=35",
+              "$$hashKey": "object:3992"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=36",
+              "$$hashKey": "object:3993"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=37",
+              "$$hashKey": "object:3994"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=38",
+              "$$hashKey": "object:3995"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=39",
+              "$$hashKey": "object:3996"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=40",
+              "$$hashKey": "object:3997"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=41",
+              "$$hashKey": "object:3998"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=42",
+              "$$hashKey": "object:3999"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244139_1786559222",
+      "id": "paragraph_1672763706924_546675389",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:331",
+      "dateFinished": "2023-01-05T06:46:56+0000",
+      "dateStarted": "2023-01-05T06:46:52+0000"
+    },
+    {
+      "text": "// Выполним проверку модели",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:56+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244139_1236581316",
+      "id": "paragraph_1672777788562_1502813074",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:332",
+      "dateFinished": "2023-01-05T06:46:57+0000",
+      "dateStarted": "2023-01-05T06:46:56+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "\nprintln(\"Result for \" + checkData.count)\nval predictionAndLabels = checkData.map(point => {\n    println(\"point:\" + point)\n    val prediction = model.predict(point.features)\n    (point.label, prediction)\n})\n\n//println(\"Pridicted \" + predictionAndLabels.count)\n//println(\"predictionAndLabels: \" + predictionAndLabels)\n\npredictionAndLabels.map(rec => println(rec._1 + \": \" + rec._2))",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:57+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Result for 59\n\u001b[1m\u001b[34mpredictionAndLabels\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(Double, Double)]\u001b[0m = MapPartitionsRDD[110] at map at <console>:48\n\u001b[1m\u001b[34mres42\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Unit]\u001b[0m = MapPartitionsRDD[111] at map at <console>:59\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=43",
+              "$$hashKey": "object:4089"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244139_399573668",
+      "id": "paragraph_1672777931457_771169866",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:333",
+      "dateFinished": "2023-01-05T06:46:57+0000",
+      "dateStarted": "2023-01-05T06:46:57+0000"
+    },
+    {
+      "text": "// Выполним анализ модели",
+      "user": "anonymous",
+      "dateUpdated": "2023-01-05T06:46:57+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898244139_590245466",
+      "id": "paragraph_1672778157610_2112183337",
+      "dateCreated": "2023-01-05T05:57:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:334"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=44",
+              "$$hashKey": "object:4125"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672898283442_2135176824",
+      "id": "paragraph_1672898283442_2135176824",
+      "dateCreated": "2023-01-05T05:58:03+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1239",
+      "text": "import org.apache.spark.mllib.evaluation.MulticlassMetrics\n\nval metrics = new MulticlassMetrics(predictionAndLabels)\n\nprintln(\"Confusion matrix: \")\nprintln(metrics.confusionMatrix)\n\nval accuracy = metrics.accuracy\nprintln()\nprintln(\"Summary statistics\")\nprintln(s\"Accuracy = $accuracy\")\n\nprintln()\nval labels = metrics.labels\nlabels.foreach{ l => println(s\"Precision($l) = \" + metrics.precision(l))} \n\n\nprintln()\nlabels.foreach{ l => println(s\"Recall($l) = \" + metrics.recall(l))} \n\n\nprintln()\nlabels.foreach{ l => println(s\"FPR($l) = \" + metrics.falsePositiveRate(l))} \n\nprintln()\nlabels.foreach{ l => println(s\"F1-Scope($l) = \" + metrics.fMeasure(l))} \n\nprintln()\nprintln(s\"Weighted precision: ${metrics.weightedPrecision}\")\nprintln(s\"Weighted recall: ${metrics.weightedRecall}\")\nprintln(s\"Weighted false positive rate: ${metrics.weightedFalsePositiveRate}\")\nprintln(s\"Weighted f1 scope: ${metrics.weightedFMeasure}\")\n\n\nprintln()\n",
+      "dateUpdated": "2023-01-05T06:46:57+0000",
+      "dateFinished": "2023-01-05T06:46:58+0000",
+      "dateStarted": "2023-01-05T06:46:57+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Confusion matrix: \n19.0  0.0   0.0   \n0.0   17.0  0.0   \n0.0   0.0   23.0  \n\nSummary statistics\nAccuracy = 1.0\n\nPrecision(0.0) = 1.0\nPrecision(1.0) = 1.0\nPrecision(2.0) = 1.0\n\nRecall(0.0) = 1.0\nRecall(1.0) = 1.0\nRecall(2.0) = 1.0\n\nFPR(0.0) = 0.0\nFPR(1.0) = 0.0\nFPR(2.0) = 0.0\n\nF1-Scope(0.0) = 1.0\nF1-Scope(1.0) = 1.0\nF1-Scope(2.0) = 1.0\n\nWeighted precision: 1.0\nWeighted recall: 1.0\nWeighted false positive rate: 0.0\nWeighted f1 scope: 1.0\n\nimport org.apache.spark.mllib.evaluation.MulticlassMetrics\n\u001b[1m\u001b[34mmetrics\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.mllib.evaluation.MulticlassMetrics\u001b[0m = org.apache.spark.mllib.evaluation.MulticlassMetrics@69f90a51\n\u001b[1m\u001b[34maccuracy\u001b[0m: \u001b[1m\u001b[32mDouble\u001b[0m = 1.0\n\u001b[1m\u001b[34mlabels\u001b[0m: \u001b[1m\u001b[32mArray[Double]\u001b[0m = Array(0.0, 1.0, 2.0)\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672899168124_897552065",
+      "id": "paragraph_1672899168124_897552065",
+      "dateCreated": "2023-01-05T06:12:48+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2264",
+      "text": "// Сохраняем модель",
+      "dateUpdated": "2023-01-05T06:46:58+0000",
+      "dateFinished": "2023-01-05T06:46:58+0000",
+      "dateStarted": "2023-01-05T06:46:58+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=45",
+              "$$hashKey": "object:4231"
+            },
+            {
+              "jobUrl": "http://8eeec858542e:4040/jobs/job?id=46",
+              "$$hashKey": "object:4232"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672900763581_894248478",
+      "id": "paragraph_1672900763581_894248478",
+      "dateCreated": "2023-01-05T06:39:23+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3080",
+      "text": "model.save(sc, s\"$basePath/Scala/IrisModel\")",
+      "dateUpdated": "2023-01-05T06:52:28+0000",
+      "dateFinished": "2023-01-05T06:52:33+0000",
+      "dateStarted": "2023-01-05T06:52:28+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672900824865_947907192",
+      "id": "paragraph_1672900824865_947907192",
+      "dateCreated": "2023-01-05T06:40:24+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3158",
+      "dateUpdated": "2023-01-05T06:46:59+0000"
+    }
+  ],
+  "name": "IrisML",
+  "id": "2HRKB7BJ6",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/IrisML"
+}
