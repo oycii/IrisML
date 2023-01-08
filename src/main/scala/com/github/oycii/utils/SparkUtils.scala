@@ -50,11 +50,7 @@ object SparkUtils {
       conf.set("spark.streaming.kafka.maxRatePerPartition", "10")
 
       conf.setMaster("local[*]")
-      //val streamingContext = new StreamingContext(conf, Seconds(1))
-      //val sparkContext = streamingContext.sparkContext
-
-      //spark = SparkSessionSingleton.getInstance(conf)
-      spark =  SparkSession.builder().config(conf).master("local").getOrCreate()
+      spark =  SparkSession.builder().config(conf).master("local[*]").getOrCreate()
     } else if (System.getenv("DEFAULT_FS") != null) {
       log.info("getSpark: DEFAULT_FS")
       log.info("DEFAULT_FS: " + System.getenv("DEFAULT_FS"))
