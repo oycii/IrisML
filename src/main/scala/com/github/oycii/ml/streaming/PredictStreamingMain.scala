@@ -68,8 +68,6 @@ object PredictStreamingMain {
 
       // Обрабатываем каждый входной набор
       messages.foreachRDD { rdd =>
-        // Get the singleton instance of SparkSession
-        //val spark = SparkSessionSingleton.getInstance(rdd.sparkContext.getConf)
         println("rdd count: " + rdd.count())
 
         rdd.foreach(rec => {
