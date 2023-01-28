@@ -105,7 +105,7 @@ object PredictStructuredStreamingMain {
       val query = irisDfWithPredict
         .select(col("json").as("value"))
         .writeStream
-        .option("checkpointLocation", "/home/sanya/tmp")
+        .option("checkpointLocation", cfg.checkpointLocation)
         .outputMode("append")
         .format("kafka")
         .option("kafka.bootstrap.servers", cfg.bootstrapServers)

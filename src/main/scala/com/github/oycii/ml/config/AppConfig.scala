@@ -5,7 +5,8 @@ case class AppConfig(
     bootstrapServers: String = null,
     groupId: String = null,
     inputTopic: String = null,
-    predictionTopic: String = null
+    predictionTopic: String = null,
+    checkpointLocation: String = null
 )
 
 object AppConfigParser {
@@ -36,6 +37,12 @@ object AppConfigParser {
         .valueName("<String>")
         .action((x, c) => c.copy(predictionTopic = x: String))
         .text("prediction-topic - Исходящий топик с результатами вычислений")
+
+      opt[String]('c', "checkpointLocation")
+        .valueName("<String>")
+        .action((x, c) => c.copy(checkpointLocation = x: String))
+        .text("checkpoint-location - Путь к директории для хранения checkpoints")
+
 
     }
   }

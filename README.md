@@ -16,7 +16,7 @@ bin/kafka-topics.sh --bootstrap-server localhost:29092 --create --topic predicti
 ### Запуск сервиса стриминга для определения Ирисов
 Запустить com.github.oycii.ml.streaming.PredictStreamingMain 
 с параметрами:
--m model -b localhost:29092 -g group-predict-23 -i input -o prediction
+-m model -b localhost:29092 -g group-predict-23 -i input -o prediction -c $HOME/tmp 
 
 ### Загрузка данных во входящий топик с данными
 Запустить com.github.oycii.kafka.producer.ProducerCVS
